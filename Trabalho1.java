@@ -1,11 +1,4 @@
 
-/**
- * Escreva uma descrição da classe Trabalho1 aqui.
- * 
- * @author (Felipe Arnt - 22106268 & Henrique Balejos - ) 
- * @version (18/4/2022)
- */
-
 
 import java.time.temporal.ChronoUnit;
 import java.time.Year;
