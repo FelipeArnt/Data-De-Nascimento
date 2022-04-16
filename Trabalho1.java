@@ -584,8 +584,8 @@ public class Trabalho1{
             if(escolha == 4){
                 System.out.println("Espero que você tenha tido uma ótima experiência, até logo!");
                 System.exit(1);
-            }
+           	 	}
 			
-	}while(true);
-		}
-	}	
+		}while(true);
+	}
+}	
