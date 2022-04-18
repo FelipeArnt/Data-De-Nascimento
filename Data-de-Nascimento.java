@@ -1,12 +1,3 @@
-
-/**
- * Escreva uma descrição da classe Trabalho1 aqui.
- * 
- * @author (Felipe Arnt - 22106268 & Henrique Balejos -22103072-9 ) 
- * @version (18/4/2022)
- */
-
-
 import java.time.temporal.ChronoUnit;
 import java.time.Year;
 import java.util.Scanner;
@@ -14,19 +5,19 @@ import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.time.LocalDate;
 
-
-public class Trabalho1{
+public class DataDeNascimento{
     public static void main(String[] args){
-        
         LocalDate ld = LocalDate.now();
         Scanner teclado = new Scanner(System.in);
         
-         do{
+        do{
+        
         System.out.println("*--------------------------*");
         System.out.println("Brincando com sua data de nascimento!");
         System.out.println("Escolha entre as seguintes opções: (Utilize os números disponíveis)");
         System.out.println("[1] Quanto tempo você já viveu? \n[2] Quando será seu aniversário?\n[3] Em qual dia da semana você nasceu? \n[4] Sair");
         System.out.println("*--------------------------*");
+        
         int escolha = teclado.nextInt();
         int year = ld.getYear();
         int month = ld.getMonthValue();
@@ -616,8 +607,3 @@ if(escolha == 4){
     }while(true);
 }
 }
-        /*
-         Essa atividade contribuiu muito para o nosso raciocínio lógico, aprimoramos a utlilização do if, switch, do, while.
-         No começo do trabalho as nossas maiores dificuldades foram em relação ao uso das classes LocalDate e Calendar, optamos pela utilização do LocalDate.
-         Para solucionar tais problemas apenas pesquisamos e assistimos vídeos no youtube de como comparar datas e o jeito certo de usar a class LocalDate e derivados.
-         */
