@@ -58,7 +58,7 @@ public class DataDeNascimento{
             LocalDateTime begin = LocalDateTime.of(ano1,mes1,dia1,hora1,minutos1);
             ZonedDateTime dataatualhora = ZonedDateTime.now();
             LocalDateTime end = LocalDateTime.now();
-                         
+            System.out.println(dataatualhora);            
             long days1 = ChronoUnit.DAYS.between(begin, end);
             long hours1 = ChronoUnit.HOURS.between(begin, end);
             long minutes1 = ChronoUnit.MINUTES.between(begin, end);
@@ -143,9 +143,10 @@ public class DataDeNascimento{
         if((ano % 400 == 0) || ((ano % 4 == 0) && ( ano % 100 != 0))){
         System.out.println("O ano de " + ano + " é bissexto!");
             if(mes == 1 || mes == 10){
-            int c0 = 0;
-            int calculo = (a + bI + c0 + d);
+            int cc0 = 0;
+            int calculo = (a + b + cc0 + d);
             int divisao = (calculo % 7);
+                
             switch(divisao){
                 case 0 :
                     System.out.println("Você nasceu em uma Segunda-feira!");
@@ -170,8 +171,8 @@ public class DataDeNascimento{
             }
             }
         else if(mes == 2 && dia <= 29){
-            int c1 = 3;
-            int calculo1 = (a + bI + c1 + d);
+            int cc1 = 3;
+            int calculo1 = (a + bI + cc1 + d);
             int divisao1 = (calculo1 % 7);
             switch(divisao1){
                 case 0 :
@@ -197,8 +198,8 @@ public class DataDeNascimento{
             }
         }
         else if(mes == 3 || mes == 11){
-            int c7 = 3;
-            int calculo7 = (a + bI + c7 + d);
+            int cc7 = 3;
+            int calculo7 = (a + b + cc7 + d);
             int divisao7 = (calculo7 % 7);
 
         switch(divisao7){
@@ -226,9 +227,11 @@ public class DataDeNascimento{
         }
         }
         else if(mes == 4 || mes == 7){
-            int c2 = 6;
-            int calculo2 = (a + bI + c2 + d);
+            int cc2 = 6;
+            int calculo2 = (a + b + cc2 + d);
             int divisao2 = (calculo2 % 7);
+            
+
             switch(divisao2){
                 case 0 :
                     System.out.println("Você nasceu em uma Segunda-feira!");
@@ -254,8 +257,8 @@ public class DataDeNascimento{
             }
         }
         else if(mes == 5){
-            int c3 = 1;
-            int calculo3 = (a + bI + c3 + d);
+            int cc3 = 1;
+            int calculo3 = (a + b + cc3 + d);
             int divisao3 = (calculo3 % 7);
             switch(divisao3){
                 case 0 :
@@ -282,8 +285,8 @@ public class DataDeNascimento{
         }
         }
         else if(mes == 9 || mes == 12 ){
-            int c4 = 5;
-            int calculo4 = (a + bI + c4 + d);
+            int cc4 = 5;
+            int calculo4 = (a + b + cc4 + d);
             int divisao4 = (calculo4 % 7);
         switch(divisao4){
                 case 0 :
@@ -310,8 +313,8 @@ public class DataDeNascimento{
         }
         }
         else if(mes == 6){
-            int c5 = 4;
-            int calculo5 = (a + bI + c5 + d);
+            int cc5 = 4;
+            int calculo5 = (a + b + cc5 + d);
             int divisao5 = (calculo5 % 7);
             switch(divisao5){
                 case 0 :
@@ -338,8 +341,8 @@ public class DataDeNascimento{
             }
         }
         else if(mes == 8){
-            int c6 = 2;
-            int calculo6 = (a + bI + c6 + d);
+            int cc6 = 2;
+            int calculo6 = (a + b + cc6 + d);
             int divisao6 = (calculo6 % 7);
             switch(divisao6){
                 case 0 :
