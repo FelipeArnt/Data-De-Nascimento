@@ -340,6 +340,7 @@ public class DataDeNascimento{
                     break;
             }
         }
+            
         else if(mes == 8){
             int cc6 = 2;
             int calculo6 = (a + b + cc6 + d);
