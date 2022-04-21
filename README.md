@@ -14,10 +14,23 @@ Programa que utiliza a data de nascimento do usuário para exibir há quanto tem
 
 ## 📁 Acesso ao projeto
 
-Você pode [acessar o cóigo fonte do projeto nesse link!](https://github.com/FelipeArnt/Data-de-Nascimento/blob/main/Data-de-Nascimento.java) ou [Baixá-lo](https://github.com/FelipeArnt/Data-de-Nascimento/archive/refs/heads/main.zip)
+Você pode [acessar o cóigo fonte do projeto nesse link!](https://github.com/FelipeArnt/Data-De-Nascimento/blob/main/DataDeNascimento.java) ou [Baixá-lo](https://github.com/FelipeArnt/Data-De-Nascimento/archive/refs/heads/main.zip)
+
 
 ## 🛠️ Abrir e rodar o projeto
-
+- Se você estiver usando linux, pode simplesmente utilizar o comando git clone 
 - Caso você tenha baixado o arquivo zip, não esqueça de extraí-lo antes de rodar o projeto!
 - É necessário que você tenha instalado a versão 8 do java.
-- 
+- É recomendado que seja utilizado o Visual Studio Code para rodar o projeto.
+- Para achar o projeto, clique em  "Open folder" ou "Ctrl + K Ctrl + O" e procure o local onde o projeto foi instalado e extraído.
+
+
+##  💻 Iniciar o projeto via Linux Terminal
+- Instale as dependências necessárias --> Git, JDE & JDK :
+- sudo apt install default-jre default-jdk, git
+- git clone https://github.com/FelipeArnt/Data-De-Nascimento.git
+- cd Data-De-Nascimento
+- javac DataDeNascimento.java
+- java DataDeNascmento
+
+
