@@ -18,4 +18,6 @@ Você pode [acessar o cóigo fonte do projeto nesse link!](https://github.com/Fe
 
 ## 🛠️ Abrir e rodar o projeto
 
-
+- Caso você tenha baixado o arquivo zip, não esqueça de extraí-lo antes de rodar o projeto!
+- É necessário que você tenha instalado a versão 8 do java.
+- 
