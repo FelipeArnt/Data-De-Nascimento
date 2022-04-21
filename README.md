@@ -14,7 +14,7 @@ Programa que utiliza a data de nascimento do usuário para exibir há quanto tem
 
 ## 📁 Acesso ao projeto
 
-Você pode [acessar o cóigo fonte do projeto nesse link!](https://github.com/FelipeArnt/Data-De-Nascimento/blob/main/DataDeNascimento.java) ou [Baixá-lo](https://github.com/FelipeArnt/Data-De-Nascimento/archive/refs/heads/main.zip)
+Você pode [acessar o código fonte do projeto nesse link!](https://github.com/FelipeArnt/Data-De-Nascimento/blob/main/DataDeNascimento.java) ou [Baixá-lo](https://github.com/FelipeArnt/Data-De-Nascimento/archive/refs/heads/main.zip)
 
 
 ## 🛠️ Abrir e rodar o projeto
