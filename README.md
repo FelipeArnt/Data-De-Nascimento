@@ -35,7 +35,7 @@ Você pode [acessar o código fonte do projeto nesse link!](https://github.com/F
 
 ## 💻 Iniciar o projeto via CMD (Windows) 
 - Localize onde o seu programa foi extraído
-![image](https://user-images.githubusercontent.com/102182726/164709795-450dfc32-4bea-45ef-93d7-6334b7f3d3a9.png)
+- ![image](https://user-images.githubusercontent.com/102182726/164709795-450dfc32-4bea-45ef-93d7-6334b7f3d3a9.png)
 - Após encontrar o diretório clique na barrinha que exibe o nome da pasta/diretório : 
 ![image](https://user-images.githubusercontent.com/102182726/164709926-5d7a40cb-5788-49ea-99e0-c3e20a79099b.png)
 - Depois de clicar na barra, digite cmd e pressione enter :
