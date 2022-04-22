@@ -27,7 +27,7 @@ Você pode [acessar o código fonte do projeto nesse link!](https://github.com/F
 
 ##  💻 Iniciar o projeto via Linux Terminal
 - Instale as dependências necessárias --> Git, JDE & JDK :
-- sudo apt install default-jre default-jdk, git
+- sudo apt install default-jre default-jdk git
 - git clone https://github.com/FelipeArnt/Data-De-Nascimento.git
 - cd Data-De-Nascimento
 - javac DataDeNascimento.java
