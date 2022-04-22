@@ -38,8 +38,7 @@ Você pode [acessar o código fonte do projeto nesse link!](https://github.com/F
 - ![image](https://user-images.githubusercontent.com/102182726/164709795-450dfc32-4bea-45ef-93d7-6334b7f3d3a9.png)
 - Após encontrar o diretório clique na barrinha que exibe o nome da pasta/diretório : 
 - ![image](https://user-images.githubusercontent.com/102182726/164709926-5d7a40cb-5788-49ea-99e0-c3e20a79099b.png)
-- Depois de clicar na barra, digite cmd e pressione enter.
-- 
+- Depois de clicar na barra, digite cmd e pressione enter. 
 ![image](https://user-images.githubusercontent.com/102182726/164712634-736ca1d6-179d-4ef1-b7c3-d286f1114fad.png)
 - 
 - Para se localizar melhor, digite "dir" que irá exibir os arquivos e pastas do diretório atual.
