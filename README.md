@@ -33,4 +33,20 @@ Você pode [acessar o código fonte do projeto nesse link!](https://github.com/F
 - javac DataDeNascimento.java
 - java DataDeNascmento
 
+## 💻 Iniciar o projeto via CMD (Windows) 
+- Localize onde o seu programa foi extraído
+- ![image](https://user-images.githubusercontent.com/102182726/164709795-450dfc32-4bea-45ef-93d7-6334b7f3d3a9.png)
+- Após encontrar o diretório clique na barrinha que exibe o nome da pasta/diretório : 
+- ![image](https://user-images.githubusercontent.com/102182726/164709926-5d7a40cb-5788-49ea-99e0-c3e20a79099b.png)
+- Depois de clicar na barra, digite cmd e pressione enter.
+- Para se localizar melhor, digite "dir" que irá exibir os arquivos e pastas do diretório atual.
+- Agora está na hora de compilar o programa, para isso, digite javac DataDeNascimento.java e pressione enter.
+- O comando para executar o programa é : java DataDeNascimento 
+
+
+
+![image](https://user-images.githubusercontent.com/102182726/164709652-405cc2f8-921c-44ea-ab2f-6f1f78963b7f.png)
+
+
+
 
