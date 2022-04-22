@@ -41,12 +41,8 @@ Você pode [acessar o código fonte do projeto nesse link!](https://github.com/F
 - Depois de clicar na barra, digite cmd e pressione enter.
 - Para se localizar melhor, digite "dir" que irá exibir os arquivos e pastas do diretório atual.
 - Agora está na hora de compilar o programa, para isso, digite javac DataDeNascimento.java e pressione enter.
+ ![image](https://user-images.githubusercontent.com/102182726/164711904-2bd34fe8-12ed-4124-962f-059c9ec35b6e.png)
 - O comando para executar o programa é : java DataDeNascimento 
-
-
-
-![image](https://user-images.githubusercontent.com/102182726/164709652-405cc2f8-921c-44ea-ab2f-6f1f78963b7f.png)
-
-
+ ![image](https://user-images.githubusercontent.com/102182726/164711981-249bfc85-a80c-4472-a339-dc29c5c7fa51.png)
 
 
