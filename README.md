@@ -39,7 +39,9 @@ Você pode [acessar o código fonte do projeto nesse link!](https://github.com/F
 - Após encontrar o diretório clique na barrinha que exibe o nome da pasta/diretório : 
 - ![image](https://user-images.githubusercontent.com/102182726/164709926-5d7a40cb-5788-49ea-99e0-c3e20a79099b.png)
 - Depois de clicar na barra, digite cmd e pressione enter.
+- ![image](https://user-images.githubusercontent.com/102182726/164712149-b035b6e4-0ae0-4a66-b698-004be7aa30d8.png)
 - Para se localizar melhor, digite "dir" que irá exibir os arquivos e pastas do diretório atual.
+- ![image](https://user-images.githubusercontent.com/102182726/164712434-36ac8c24-8ff2-4885-be7a-da66e42b42ed.png)
 - Agora está na hora de compilar o programa, para isso, digite javac DataDeNascimento.java e pressione enter.
  ![image](https://user-images.githubusercontent.com/102182726/164711904-2bd34fe8-12ed-4124-962f-059c9ec35b6e.png)
 - O comando para executar o programa é : java DataDeNascimento 
