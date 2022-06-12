@@ -10,7 +10,8 @@ Programa que utiliza a data de nascimento do usuário para exibir há quanto tem
 - `Funcionalidade 1`: Contador de dias, horas e minutos vividos!
 - `Funcionalidade 2`: Seu aniversário já passou?
 - `Funcionalidade 3`: Descobrindo o dia da semana em que você nasceu!
-- `Funcionalidade 4`: Voltar ao menu interativo!
+- `Funcionalidade 4`: Printar todos os dados do usuário!
+- `Funcionalidade 5`: Voltar ao menu interativo!
 
 ## 📁 Acesso ao projeto
 
