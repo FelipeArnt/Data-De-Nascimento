@@ -1,11 +1,4 @@
 
-/**
- * Escreva uma descrição da classe Trabalho1 aqui.
- * 
- * @author (Felipe Arnt) 
- * @version (12/06/2022)
- 
- */
 import java.time.temporal.ChronoUnit;
 import java.time.Year;
 import java.util.Scanner;
@@ -13,7 +6,7 @@ import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.time.LocalDate;
 
-public class Trabalho1{
+public class DataDeNascimento{
 
     public static Usuario criarUsuario(){
         Scanner teclado = new Scanner(System.in);
