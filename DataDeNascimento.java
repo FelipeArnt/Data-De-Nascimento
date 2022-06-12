@@ -1,3 +1,11 @@
+
+/**
+ * Escreva uma descrição da classe Trabalho1 aqui.
+ * 
+ * @author (Felipe Arnt) 
+ * @version (12/06/2022)
+ 
+ */
 import java.time.temporal.ChronoUnit;
 import java.time.Year;
 import java.util.Scanner;
@@ -5,609 +13,207 @@ import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.time.LocalDate;
 
-public class DataDeNascimento{
-    public static void main(String[] args){
-        LocalDate ld = LocalDate.now();
+public class Trabalho1{
+
+    public static Usuario criarUsuario(){
         Scanner teclado = new Scanner(System.in);
+        System.out.println("Qual o seu nome ? ");
+        String nome = teclado.nextLine();
+        System.out.println("Qual a sua idade ? ");
+        int idade = teclado.nextInt();
         
-        do{
+        System.out.println("Digite o dia em que você nasceu :");
+        int dia = teclado.nextInt();
         
-        System.out.println("*--------------------------*");
-        System.out.println("Brincando com sua data de nascimento!");
-        System.out.println("Escolha entre as seguintes opções: (Utilize os números disponíveis)");
-        System.out.println("[1] Quanto tempo você já viveu? \n[2] Quando será seu aniversário?\n[3] Em qual dia da semana você nasceu? \n[4] Sair");
-        System.out.println("*--------------------------*");
+        System.out.println("Digite o mês do seu nascimento :");
+        int mes = teclado.nextInt(); 
         
-        int escolha = teclado.nextInt();
+        System.out.println("Digite o ano do seu nascimento : ");
+        int ano = teclado.nextInt();
+            
+            return new Usuario(nome,idade,dia,mes,ano);
+            }
+    public static void main(String[] args){
+        
+        LocalDate ld = LocalDate.now();
         int year = ld.getYear();
         int month = ld.getMonthValue();
         int day = ld.getDayOfMonth();
+
+        Usuario interativo = criarUsuario();
+        Scanner teclado = new Scanner(System.in);
+
+        int optInterativo = 0;
+        do{
+            optInterativo = menuInterativo();
             
-            //Início do programa 1;
-            if(escolha == 1){
-            System.out.println("Digite o ano em que você nasceu :");
-            int ano1 = teclado.nextInt();
-            if(ano1 > 2022 || ano1 < 1900){
-                System.out.println("Você digitou um número inválido!");
-                System.exit(1);
+            switch(optInterativo){
+                case 1: diasVividos(interativo);break;
+                case 2: contagemTempo(interativo);break;
+                case 3: diaSemana(interativo);break;
+                case 4: printDados(interativo);break;
                 }
-            System.out.println("Digite o mês do seu nascimento :");
-            int mes1 = teclado.nextInt(); 
-            if(mes1 > 12 || mes1 < 1){
-                 System.out.println("Você digitou um número inválido!");
-                System.exit(1);
-                }
-            System.out.println("Digite o dia seu nascimento : ");
-            int dia1 = teclado.nextInt();
-            if(dia1 > 31 || dia1 < 1){
-                 System.out.println("Você digitou um número inválido!");
-                 System.exit(1);
-                }
+            }while(optInterativo != 0);
+
+            System.out.println("Ate logo, espero que voce tenha tido uma otima experiencia!");    
+    }
+public static void diasVividos(Usuario interativo){
+    Scanner teclado = new Scanner(System.in);
+        int ano1 = interativo.getAno();
+        int dia1 = interativo.getDia();
+        int mes1 = interativo.getMes(); 
+            
             System.out.println("Digite a hora do seu nascimento : ");
             int hora1 = teclado.nextInt();
-            if(hora1 > 24 || hora1 < 1){
-                 System.out.println("Você digitou um número inválido!");
-                 System.exit(1);
-            }
             System.out.println("Digite os minutos também :");
             int minutos1 = teclado.nextInt();
-            if(minutos1 > 60){
-                 System.out.println("Você digitou um número inválido!");
-                 System.exit(1);
-            }
+            
+            if(ano1 > 2022 || ano1 < 1900 || minutos1 > 60 || mes1> 12 || mes1 < 1 || dia1 > 31 || dia1 < 1 || hora1 > 24 || hora1 < 1){System.out.println("Você digitou um número inválido!");}//menuInterativo();}
+            
             LocalDateTime begin = LocalDateTime.of(ano1,mes1,dia1,hora1,minutos1);
             ZonedDateTime dataatualhora = ZonedDateTime.now();
             LocalDateTime end = LocalDateTime.now();
+            
             System.out.println(dataatualhora);            
             long days1 = ChronoUnit.DAYS.between(begin, end);
             long hours1 = ChronoUnit.HOURS.between(begin, end);
             long minutes1 = ChronoUnit.MINUTES.between(begin, end);
+            
             System.out.println("Você viveu até hoje " +days1 + " dias!");
             System.out.println("Você viveu " + hours1 + " horas!");
             System.out.println("Você viveu "+ minutes1 + " minutos!");
-            System.out.println("[0] Voltar para o menu!");
-            int escolha2 = teclado.nextInt();
-            if(escolha2 == 0){
-            System.out.println("Voltando para o menu!");
+            
+            System.out.println("Pressione qualquer tecla para prosseguir!");
+            teclado.next();
             System.out.println("\f");
             }
-            }
-        //Fim do programa1;
+       public static void printDados(Usuario interativo){
+            Scanner teclado = new Scanner(System.in);
+        System.out.println("|-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|");
+        System.out.println(interativo);
+        System.out.println("|-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|");
+        System.out.println("\n [Pressione qualquer tecla para continuar]");
+        teclado.next();
+        System.out.println("\f");
+        }
+
         
         //Início do programa 2;    
-        if(escolha == 2){
+        public static void contagemTempo(Usuario interativo){
+        LocalDate ld = LocalDate.now();
+        
+        int year = ld.getYear();
+        int month = ld.getMonthValue();
+        int day = ld.getDayOfMonth();
+        
+        Scanner teclado = new Scanner(System.in);
         int anoAtual = year;
-        System.out.println("Qual o dia em que você nasceu?");
-        int aniver = teclado.nextInt();
-        if(aniver > 31){
-        System.out.println("Você digitou um número inválido!");
-        System.exit(1);
-        }
-        System.out.println("De qual mês você é?");
-        int mesniver = teclado.nextInt();
-        if(mesniver > 12){
-            System.out.println("Você digitou um número inválido!");
-            System.exit(1);
-        }
+        
+        int aniver = interativo.getDia();
+        
+        if(aniver > 31){System.out.println("Você digitou um número inválido!");}//menuInterativo();}
+        int mesniver = interativo.getMes();
+        String mesExtenso = "";
+        if(mesniver == 1){mesExtenso = "Janeiro";}
+        if(mesniver == 2){mesExtenso = "Fevereiro";}
+        if(mesniver == 3){mesExtenso = "Março";}
+        if(mesniver == 4){mesExtenso = "Abril";}
+        if(mesniver == 5){mesExtenso = "Maio";}
+        if(mesniver == 6){mesExtenso = "Junho";}
+        if(mesniver == 7){mesExtenso = "Julho";}
+        if(mesniver == 8){mesExtenso = "Agosto";}
+        if(mesniver == 9){mesExtenso = "Setembro";}
+        if(mesniver == 10){mesExtenso = "Outubro";}
+        if(mesniver == 11){mesExtenso = "Novembro";}
+        if(mesniver == 12){mesExtenso = "Dezembro";}
+        
+        if(mesniver > 12){System.out.println("Você digitou um número inválido!");}//amenuInterativo();}
+        
         LocalDate aniversario = LocalDate.of(anoAtual,mesniver,aniver);
         long daysAfter = ChronoUnit.DAYS.between(ld, aniversario);
         long daysBefore = ChronoUnit.DAYS.between(aniversario, ld);
         
-        if(aniversario.isEqual(ld)){
-        System.out.println("Feliz aniversário!!");
+        if(aniversario.isEqual(ld)){System.out.println("Feliz aniversário!!");}
+        else if(aniversario.isAfter(ld)){System.out.println("Faltam " + daysAfter + " dia(s) para seu aniversário!");}
+        else if(aniversario.isBefore(ld)){System.out.println("Seu aniversário foi há " + daysBefore + " dia(s)! No dia " + aniver + " do mês " + mesExtenso);}
         }
-        else if(aniversario.isAfter(ld)){
-        System.out.println("Faltam " + daysAfter + "dia(s) para seu aniversário!");
-        }
-        else if(aniversario.isBefore(ld)){
-        System.out.println("Seu aniversário foi há " + daysBefore + " dia(s)! No dia " + aniver + " do mês " + mesniver);
         
-        
-        System.out.println("[0] Voltar para o menu!");
-        int escolha2 = teclado.nextInt();
-        if(escolha2 == 0){
-        System.out.println("Voltando para o menu!");
-        System.out.println("\f");
-        }
-        }
-        }
         //Fim do programa 2;
-        if(escolha == 3){
-            System.out.println("Em que dia você nasceu?");
-        int dia = teclado.nextInt();
-        if(dia > 31){
-            System.out.println("Você digitou um número inválido!");
-            System.exit(1);
-        }
-        System.out.println("Em que mês você nasceu?");
-        int mes = teclado.nextInt();
-        if(mes > 12){
-            System.out.println("Você digitou um número inválido!");
-            System.exit(1);
-            }
-        System.out.println("Em que ano você nasceu?");
-        int ano = teclado.nextInt();
-        if(ano > 2022 || ano < 1900){
-            System.out.println("Você digitou um número inválido!");
-            System.exit(1);
-            }
-        //Variáveis
-        int m = 1900;
-        int a = (ano - m);
-        int b = (a/4);
-        int c = 0;
-        int d = dia - 1;
-        int bI = b - 1;
-        
-        //Leap year!
-        if((ano % 400 == 0) || ((ano % 4 == 0) && ( ano % 100 != 0))){
-        System.out.println("O ano de " + ano + " é bissexto!");
-            if(mes == 1 || mes == 10){
-            int cc0 = 0;
-            int calculo = (a + b + cc0 + d);
-            int divisao = (calculo % 7);
-                
-            switch(divisao){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;
-            }
-            }
-        else if(mes == 2 && dia <= 29){
-            int cc1 = 3;
-            int calculo1 = (a + bI + cc1 + d);
-            int divisao1 = (calculo1 % 7);
-            switch(divisao1){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;
-            }
-        }
-        else if(mes == 3 || mes == 11){
-            int cc7 = 3;
-            int calculo7 = (a + b + cc7 + d);
-            int divisao7 = (calculo7 % 7);
 
-        switch(divisao7){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                    break;
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;    
-        }
-        }
-        else if(mes == 4 || mes == 7){
-            int cc2 = 6;
-            int calculo2 = (a + b + cc2 + d);
-            int divisao2 = (calculo2 % 7);
-            
-
-            switch(divisao2){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                break;
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;    
-            }
-        }
-        else if(mes == 5){
-            int cc3 = 1;
-            int calculo3 = (a + b + cc3 + d);
-            int divisao3 = (calculo3 % 7);
-            switch(divisao3){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                break;
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;
-        }
-        }
-        else if(mes == 9 || mes == 12 ){
-            int cc4 = 5;
-            int calculo4 = (a + b + cc4 + d);
-            int divisao4 = (calculo4 % 7);
-        switch(divisao4){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                    break;
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;
-        }
-        }
-        else if(mes == 6){
-            int cc5 = 4;
-            int calculo5 = (a + b + cc5 + d);
-            int divisao5 = (calculo5 % 7);
-            switch(divisao5){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                    break;
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;
-            }
-        }
-            
-        else if(mes == 8){
-            int cc6 = 2;
-            int calculo6 = (a + b + cc6 + d);
-            int divisao6 = (calculo6 % 7);
-            switch(divisao6){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                break;
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                break;
-                }
-            }                        
-        }
-            else if((ano % 400 != 0) || ((ano % 4 != 0) && ( ano % 100 == 0))){
-            System.out.println("O ano de " + ano + " não é bissexto!");
-            
-        if(mes == 1 || mes == 10){
-            int c0 = 0;
-            int calculo = (a + b + c0 + d);
-            int divisao = (calculo % 7);
-            switch(divisao){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;
-            }
-            }
-        else if(mes == 2 && dia <= 29){
-            int c1 = 3;
-            int calculo1 = (a + b + c1 + d);
-            int divisao1 = (calculo1 % 7);
-            switch(divisao1){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;
-            }
-        }
-        else if(mes == 3 || mes == 11){
-            int c7 = 3;
-            int calculo7 = (a + b + c7 + d);
-            int divisao7 = (calculo7 % 7);
-            switch(divisao7){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                    break;
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;    
-        }
-        }
-        else if(mes == 4 || mes == 7){
-            int c2 = 6;
-            int calculo2 = (a + b + c2 + d);
-            int divisao2 = (calculo2 % 7);
-            switch(divisao2){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                break;
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;    
-            }
-        }
-        else if(mes == 5){
-            int c3 = 1;
-            int calculo3 = (a + b + c3 + d);
-            int divisao3 = (calculo3 % 7);
-            switch(divisao3){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                break;
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;
-        }
-        }
-        else if(mes == 9 || mes == 12 ){
-            int c4 = 5;
-            int calculo4 = (a + b + c4 + d);
-            int divisao4 = (calculo4 % 7);
-        switch(divisao4){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                    break;
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;
-        }
-        }
-        else if(mes == 6){
-            int c5 = 4;
-            int calculo5 = (a + b + c5 + d);
-            int divisao5 = (calculo5 % 7);
-            switch(divisao5){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                    break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                    break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                    break;
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                    break;
-            }
-        }
-        else if(mes == 8){
-            int c6 = 2;
-            int calculo6 = (a + b + c6 + d);
-            int divisao6 = (calculo6 % 7);
-            switch(divisao6){
-                case 0 :
-                    System.out.println("Você nasceu em uma Segunda-feira!");
-                break;
-                case 1 :
-                    System.out.println("Você nasceu em uma Terça-feira!");
-                break;
-                case 2 :
-                    System.out.println("Você nasceu em uma Quarta-feira!");
-                break;
-                case 3 : 
-                    System.out.println("Você nasceu em uma Quinta-feira!");
-                break;
-                case 4 :
-                    System.out.println("Você nasceu em uma Sexta-feira!");
-                break;
-                case 5 :
-                    System.out.println("Você nasceu em um Sábado!");
-                break;
-                case 6 :
-                    System.out.println("Você nasceu em um Domingo!");
-                break;
-                }
-                }    
-        
-        System.out.println("[0] Voltar para o menu!");
-        int escolha2 = teclado.nextInt();
-        if(escolha2 == 0){
-        System.out.println("Voltando para o menu!");
+        public static int menuInterativo(){
+        Scanner teclado = new Scanner(System.in);
         System.out.println("\f");
+        System.out.println("\n|-=-=-=-=//Brincado com sua data de nascimenteo//-=-=-=-=-|");
+        System.out.println("[1] Dias Vividos");
+        System.out.println("[2] Aniversário");   
+        System.out.println("[3] Dia da semana");
+        System.out.println("[4] Mostrar Dados");
+        System.out.println("[0] Sair");
+        System.out.println("|-=-=-=-=-=-=-//-=-=-=-=-=-=-=-=-//=-=-=-=-=-=-=-=//-=-=-=-=-|");
+
+        int escolhaMenu = teclado.nextInt();
+        if(escolhaMenu != 0 && escolhaMenu != 1 && escolhaMenu != 2 && escolhaMenu != 3 && escolhaMenu != 4){
+            System.out.println("\n Opcao Invalida");
+            System.out.println("\n [Pressione qualquer tecla para continuar]");
+            teclado.next();
+            menuInterativo();
+        } return escolhaMenu;
+}
+
+    public static void diaSemana(Usuario interativo){
+        LocalDate ld = LocalDate.now();
+        int year = ld.getYear();
+        int m = 1900; 
+        int anoGet = interativo.getAno();
+        int diaGet = interativo.getDia();
+        int mesGet = interativo.getMes();
+             
+        int a = (anoGet - m);
+        int b = (a/4); 
+        int d = diaGet - 1 ;
+        int bI = b - 1;
+        int c = 0;
+
+        if(mesGet == 1){c = 0;}
+        if(mesGet == 2){c = 3;}
+        if(mesGet == 3){c = 3;}
+        if(mesGet == 4){c = 6;}
+        if(mesGet == 5){c = 1;}
+        if(mesGet == 6){c = 4;}
+        if(mesGet == 7){c = 6;}
+        if(mesGet == 8){c = 2;}
+        if(mesGet == 9){c = 5;}
+        if(mesGet == 10){c = 0;}
+        if(mesGet == 11){c = 3;}
+        if(mesGet == 12){c = 5;}
+
+        int resultadoCalculo = a + b + c + d;
+        int dividindo = resultadoCalculo % 7;
+    
+        //if((anoGet % 400 == 0) || ((anoGet % 4 == 0) && ( anoGet % 100 != 0))){System.out.println("O ano de " + anoGet + " é bissexto!");}
+        if(anoGet % 400 == 0 || anoGet % 4 == 0 && anoGet % 100 != 0 && diaGet >= 29 && mesGet == 2){
+        int resultadoCalculoBI = a + bI + c + d;
+        int dividindoBI = resultadoCalculoBI % 7;
+            switch(dividindoBI){
+               case 0 : System.out.println("Você nasceu em uma Segunda-feira!");break;
+               case 1 : System.out.println("Você nasceu em uma Terça-feira!");break;
+               case 2 : System.out.println("Você nasceu em uma Quarta-feira!");break;
+               case 3 : System.out.println("Você nasceu em uma Quinta-feira!");break;
+               case 4 : System.out.println("Você nasceu em uma Sexta-feira!");break;
+               case 5 : System.out.println("Você nasceu em um Sábado!");break;
+               case 6 : System.out.println("Você nasceu em um Domingo!"); break;
+            }
+        }
+        else{
+           switch(dividindo){
+               case 0 : System.out.println("Você nasceu em uma Segunda-feira!");break;
+               case 1 : System.out.println("Você nasceu em uma Terça-feira!");break;
+               case 2 : System.out.println("Você nasceu em uma Quarta-feira!");break;
+               case 3 : System.out.println("Você nasceu em uma Quinta-feira!");break;
+               case 4 : System.out.println("Você nasceu em uma Sexta-feira!");break;
+               case 5 : System.out.println("Você nasceu em um Sábado!");break;
+               case 6 : System.out.println("Você nasceu em um Domingo!"); break;
+               }
+        }
     }
-}
-}
-if(escolha == 4){
-    System.out.println("Espero que você tenha tido uma ótima experiência, até logo!");
-    System.exit(1);
-    }
-    }while(true);
-}
 }
