@@ -1,4 +1,4 @@
-[README.TXT](https://github.com/FelipeArnt/Data-de-Nascimento/files/8508692/README.TXT)
+
 <h1 align="center"> Data de Nascimento</h1>
 
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
@@ -7,11 +7,10 @@ Programa que utiliza a data de nascimento do usuário para exibir há quanto tem
 
 ## :hammer: Funcionalidades do projeto
 
-- `Funcionalidade 1`: Contador de dias, horas e minutos vividos!
-- `Funcionalidade 2`: Seu aniversário já passou?
-- `Funcionalidade 3`: Descobrindo o dia da semana em que você nasceu!
-- `Funcionalidade 4`: Printar todos os dados do usuário!
-- `Funcionalidade 5`: Voltar ao menu interativo!
+- `Dias Vividos`: Contador de dias, horas e minutos vividos!
+- `Aniversário`: Seu aniversário já passou?
+- `Dia da Semana`: Descobrindo o dia da semana em que você nasceu!
+- `Mostrar Dados`: Printar todos os dados do usuário!
 
 ## 📁 Acesso ao projeto
 
