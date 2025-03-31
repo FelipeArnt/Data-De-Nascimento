@@ -52,34 +52,41 @@ public class DataDeNascimento{
     }
 public static void diasVividos(Usuario interativo){
     Scanner teclado = new Scanner(System.in);
-        int ano1 = interativo.getAno();
-        int dia1 = interativo.getDia();
-        int mes1 = interativo.getMes(); 
-            
-            System.out.println("Digite a hora do seu nascimento : ");
-            int hora1 = teclado.nextInt();
-            System.out.println("Digite os minutos também :");
-            int minutos1 = teclado.nextInt();
-            
-            if(ano1 > 2022 || ano1 < 1900 || minutos1 > 60 || mes1> 12 || mes1 < 1 || dia1 > 31 || dia1 < 1 || hora1 > 24 || hora1 < 1){System.out.println("Você digitou um número inválido!");}//menuInterativo();}
-            
-            LocalDateTime begin = LocalDateTime.of(ano1,mes1,dia1,hora1,minutos1);
-            ZonedDateTime dataatualhora = ZonedDateTime.now();
-            LocalDateTime end = LocalDateTime.now();
-            
-            System.out.println(dataatualhora);            
-            long days1 = ChronoUnit.DAYS.between(begin, end);
-            long hours1 = ChronoUnit.HOURS.between(begin, end);
-            long minutes1 = ChronoUnit.MINUTES.between(begin, end);
-            
-            System.out.println("Você viveu até hoje " +days1 + " dias!");
-            System.out.println("Você viveu " + hours1 + " horas!");
-            System.out.println("Você viveu "+ minutes1 + " minutos!");
-            
-            System.out.println("Pressione qualquer tecla para prosseguir!");
-            teclado.next();
-            System.out.println("\f");
-            }
+    LocalDate dataAtual = LocalDate.now(); // Obter data atual aqui
+    
+    int ano1 = interativo.getAno();
+    int dia1 = interativo.getDia();
+    int mes1 = interativo.getMes(); 
+        
+    System.out.println("Digite a hora do seu nascimento : ");
+    int hora1 = teclado.nextInt();
+    System.out.println("Digite os minutos também :");
+    int minutos1 = teclado.nextInt();
+    
+    // Usar dataAtual.getYear() em vez de ld.getYear()
+    if(ano1 > dataAtual.getYear() || ano1 < 1900 || minutos1 > 60 || 
+       mes1 > 12 || mes1 < 1 || dia1 > 31 || dia1 < 1 || 
+       hora1 > 24 || hora1 < 1) {
+        System.out.println("Você digitou um número inválido!");
+    }
+    
+    LocalDateTime begin = LocalDateTime.of(ano1, mes1, dia1, hora1, minutos1);
+    ZonedDateTime dataatualhora = ZonedDateTime.now();
+    LocalDateTime end = LocalDateTime.now();
+    
+    System.out.println(dataatualhora);            
+    long days1 = ChronoUnit.DAYS.between(begin, end);
+    long hours1 = ChronoUnit.HOURS.between(begin, end);
+    long minutes1 = ChronoUnit.MINUTES.between(begin, end);
+    
+    System.out.println("Você viveu até hoje " + days1 + " dias!");
+    System.out.println("Você viveu " + hours1 + " horas!");
+    System.out.println("Você viveu "+ minutes1 + " minutos!");
+    
+    System.out.println("Pressione qualquer tecla para prosseguir!");
+    teclado.next();
+    System.out.println("\f");
+}
        public static void printDados(Usuario interativo){
             Scanner teclado = new Scanner(System.in);
         System.out.println("|-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|");
