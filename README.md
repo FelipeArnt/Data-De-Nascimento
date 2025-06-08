@@ -30,8 +30,8 @@ Você pode [acessar o código fonte do projeto nesse link!](https://github.com/F
 - sudo apt install default-jre default-jdk git
 - git clone https://github.com/FelipeArnt/Data-De-Nascimento.git
 - cd Data-De-Nascimento
-- javac DataDeNascimento.java
-- java DataDeNascmento
+- `chmod +x build.sh` arquivo builder
+-  rodar arquivo builder `./builder.sh`
 
 ## 💻 Iniciar o projeto via CMD (Windows) 
 - Localize onde o seu programa foi extraído
