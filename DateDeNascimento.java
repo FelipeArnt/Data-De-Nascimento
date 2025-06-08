@@ -3,7 +3,7 @@ import java.time.format.TextStyle;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 
-public class Nascimento {
+public class DataDeNascimento {
     private static final Scanner TECLADO = new Scanner(System.in);
     private static final String[] MESES = {
         "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
