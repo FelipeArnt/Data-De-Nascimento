@@ -1,3 +1,3 @@
-javac -Xlint -Xlint:deprecation -Xlint:unchecked Usuario.java Nascimento.java 
+javac -Xlint -Xlint:deprecation -Xlint:unchecked Usuario.java DataDeNascimento.java 
 
-java Nascimento
+java DataDeNascimento
